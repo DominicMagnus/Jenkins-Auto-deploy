@@ -1,13 +1,9 @@
-sudo apt update
+sudo apt update && sudo apt install -y default-jdk 
 
-sudo apt upgrade
+sudo sh -c 'echo deb http://pkg.jenkins.io/debian-stable binary/ > /etc/apt/sources.list.d/jenkins.list' 
 
-apt install default-jdk
+sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 5BA31D57EF5975CA
 
-wget -q -O - https://pkg.jenkins.io/debian-stable/jenkins.io.key |sudo gpg --dearmor -o /usr/share/keyrings/jenkins.gpg
+sudo apt update && sudo apt install -y jenkins 
 
-sudo sh -c 'echo deb http://pkg.jenkins.io/debian-stable binary/ > /etc/apt/sources.list.d/jenkins.list'
-
-apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 5BA31D57EF5975CA
-
-apt update && apt install -y jenkins
+echo "This is your Jenkins password:" && sudo cat /var/lib/jenkins/secrets/initialAdminPassword

@@ -7,3 +7,5 @@ sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 5BA31D57EF5975CA
 sudo apt update && sudo apt install -y jenkins 
 
 echo "This is your Jenkins password:" && sudo cat /var/lib/jenkins/secrets/initialAdminPassword
+
+go to http://your_ip:8080/ and enter password
